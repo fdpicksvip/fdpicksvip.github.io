@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FD PICKS · Monthly VIP Pass</title>
+<meta name="description" content="FD PICKS VIP · First month $9.99, then $24.99/month, cancel anytime. 50+ leaked cappers in one Discord.">
+<meta property="og:title" content="FD PICKS · Monthly VIP Pass">
+<meta property="og:description" content="First month $9.99, then $24.99/month, cancel anytime. 50+ leaked cappers in one Discord.">
+<meta name="theme-color" content="#0b0b0f">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0b0b0f; color: #f2f2f5; font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { max-width: 560px; margin: 0 auto; padding: 28px 16px 8px; text-align: center; }
+  .brand { font-weight: 800; letter-spacing: .08em; font-size: 14px; color: #9aa0ad; }
+  h1 { margin: 6px 0 4px; font-size: 26px; }
+  .deal { margin: 0; font-weight: 700; color: #3ddc84; }
+  .then { margin: 2px 0 0; font-size: 14px; color: #9aa0ad; }
+  #checkout { max-width: 560px; margin: 8px auto 0; padding: 0 16px; min-height: 480px; }
+  .note { max-width: 560px; margin: 16px auto 40px; padding: 0 16px; font-size: 13px; color: #9aa0ad; text-align: center; }
+  .fallback { display: none; text-align: center; padding: 24px 16px; }
+  .fallback a { color: #3ddc84; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">FD PICKS VIP</div>
+  <h1>Monthly VIP Pass</h1>
+  <p class="deal">First month $9.99 · code applied</p>
+  <p class="then">then $24.99/month, cancel anytime</p>
+</header>
+<div id="checkout"></div>
+<div class="fallback" id="fallback">Checkout didn't load. <a href="https://whop.com/checkout/plan_pPDxGho2iyFjz">Open it on Whop</a> and enter code <b>15OFF</b>.</div>
+<p class="note">Secure checkout by Whop. After you pay, link your Discord in Whop to unlock VIP.</p>
+<script src="https://cdn.whop.com/elements/amber/elements.js" data-whop-elements></script>
+<script type="module">
+  try {
+    const whop = window.WhopElements({ appearance: { theme: { appearance: 'dark' } } });
+    const checkout = whop.checkout.create({ plan: 'plan_pPDxGho2iyFjz', promoCode: '15OFF' });
+    checkout.create('checkout').mount('#checkout');
+  } catch (e) {
+    document.getElementById('fallback').style.display = 'block';
+  }
+</script>
+</body>
+</html>
